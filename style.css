@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* --- VARIÁVEIS CSS --- */
+:root {
+    --cor-fundo-principal: #121212;
+    --cor-texto-principal: #e0e0e0;
+    --cor-divisoria-sutil: #333;
+    --cor-slogan-header: #aaa;
+    
+    --cor-pokemon-vermelho: #FF1B1B;
+    --cor-store-branco: #FFFFFF;
+    --cor-destaque-verde: #00c997;
+    --cor-destaque-verde-hover: #00a07a;
+    
+    --cor-fundo-rodape: #1e1e1e;
+    --cor-texto-rodape: #aaa;
+    --cor-texto-disclaimer: #888;
+
+    --cor-botoes-form: #2a75bb;
+    --cor-botoes-form-hover: #1a5690;
+    --cor-borda-input-form: #ccc;
+    --cor-fundo-input-form: #282828; 
+
+    --cor-fundo-modal: #fefefe;
+    --cor-borda-modal: #888;
+    --cor-texto-modal: #333; 
+
+    --cor-feedback-erro: red;
+    --cor-feedback-sucesso: green;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+}
+
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
+header {
+    background-color: transparent;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--cor-divisoria-sutil);
+}
+
+
+header h1 {
+    font-size: 3rem; 
+    
+}
+
+.poke-vermelho {
+    color: var(--cor-pokemon-vermelho); 
+}
+
+.store-branco {
+    color: var(--cor-store-branco); 
+}
+
+header p {
+    color: var(--cor-slogan-header);
+}
+
+nav {
+    background-color: transparent;
+    border-bottom: 1px solid var(--cor-divisoria-sutil);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem;
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cor-destaque-verde);
+}
+
+
+/* --- SEÇÃO PRINCIPAL (HERO)--- */
+main {
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-texto {
+    max-width: 500px;
+}
+
+.hero-texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-imagem img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* Botão de destaque (Ver Produtos) */
+.btn {
+    display: inline-block;
+    background-color: var(--cor-destaque-verde);
+    color: #333;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: transform 0.2s, background-color 0.2s; 
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: var(--cor-destaque-verde-hover); 
+}
+
+
+/* --- CARDS DE PRODUTO --- */
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 1.5rem;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.card-produto {
+    background-color: transparent; 
+    border: none;
+    
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-produto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 201, 151, 0.2);
+}
+
+.card-produto img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-produto h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.card-produto p {
+    color: var(--cor-destaque-verde); 
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--cor-fundo-rodape);
+    color: var(--cor-texto-rodape);
+    margin-top: 2rem;
+    border-top: 1px solid var(--cor-divisoria-sutil);
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    color: var(--cor-texto-disclaimer);
+    max-width: 800px;
+    margin: 1rem auto 0 auto;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+/* --- ESTILOS PARA O SELETOR DE QUANTIDADE E BOTÃO COMPRAR --- */
+
+.seletor-comprar {
+    display: flex;
+    border: 2px solid var(--cor-destaque-verde);
+    border-radius: 50px;
+    overflow: hidden;
+    margin-top: auto;
+    max-width: 190px;
+    width: 100%;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.seletor-quantidade {
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-store-branco); 
+}
+
+.display-qtd {
+    padding: 0 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333; 
+}
+
+.btn-qtd {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 10px;
+    color: var(--cor-destaque-verde); 
+}
+
+.btn-comprar {
+    flex-grow: 1;
+    background-color: var(--cor-destaque-verde); 
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 0.7rem 0.4rem;
+    font-size: 0.9rem;
+}
+
+.btn-comprar:hover {
+    background-color: var(--cor-destaque-verde-hover);
+}
+
+
+
+/* --- ESTILOS DO FORMULÁRIO --- */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: var(--cor-fundo-rodape); 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--cor-texto-principal);
+}
+
+form input, 
+form textarea {
+    padding: 12px;
+    margin-bottom: 10px; 
+    border-radius: 5px;
+    border: 1px solid var(--cor-borda-input-form); 
+    background-color: var(--cor-fundo-input-form); 
+    color: var(--cor-texto-principal);
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--cor-destaque-verde);
+    box-shadow: 0 0 5px rgba(0, 201, 151, 0.4);
+}
+
+form textarea { 
+    resize: vertical; 
+    min-height: 120px; 
+}
+
+form button {
+    background-color: var(--cor-botoes-form); 
+    color: var(--cor-store-branco); 
+    cursor: pointer;
+    border: none;
+    margin-top: 25px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+form button:hover {
+    background-color: var(--cor-botoes-form-hover); 
+}
+
+#feedback-msg {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilos para o feedback */
+#feedback-msg[style*="color: red"] {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: var(--cor-feedback-erro) !important; 
+}
+
+#feedback-msg[style*="color: green"] {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: var(--cor-feedback-sucesso) !important; 
+}
+
+/* --- DESIGN RESPONSIVO --- */
+
+/* Telas grandes (desktops) */
+
+/* Tablets (landscape) e desktops menores - Max 1024px */
+@media screen and (max-width: 1024px) {
+    .grid-produtos {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+        gap: 1rem;
+    }
+    .card-produto {
+        padding: 0.8rem;
+    }
+}
+
+/* Tablets (portrait) e celulares grandes - Max 768px */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem; 
+    }
+
+    nav ul {
+        flex-direction: column; 
+        text-align: center;
+    }
+    nav ul li a {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-section {
+        flex-direction: column-reverse; 
+        text-align: center;
+        padding: 2rem 1rem; 
+    }
+
+    .hero-texto h2 {
+        font-size: 1.8rem; 
+    }
+
+    .hero-imagem img {
+        max-width: 180px;
+    }
+
+    .grid-produtos {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+        gap: 1rem; 
+    }
+
+    .card-produto {
+        width: auto; 
+        margin: auto;
+    }
+
+    .seletor-comprar {
+        max-width: 150px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    form {
+        margin: 1.5rem 1rem;
+        padding: 1rem;
+    }
+}
+
+/* Celulares pequenos - Max 480px */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 0.9rem; 
+    }
+
+    main {
+        padding: 0.5rem 0.8rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header p {
+        font-size: 0.8rem;
+    }
+
+    .hero-section {
+        padding: 1rem 0.5rem;
+        gap: 1rem;
+    }
+    .hero-texto h2 {
+        font-size: 1.6rem;
+    }
+    .hero-texto p {
+        font-size: 0.85rem;
+    }
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+
+    .grid-produtos {
+        grid-template-columns: 1fr; 
+        gap: 0.8rem;
+    }
+    
+    .seletor-comprar {
+        max-width: 145px; 
+    }
+
+    .seletor-quantidade {
+        padding: 0 2px; 
+    }
+
+    .display-qtd {
+        padding: 0 6px; 
+        font-size: 0.85rem; 
+    }
+
+    .btn-qtd {
+        font-size: 1rem; 
+        padding: 0 8px; 
+    }
+
+    .btn-comprar {
+        padding: 0.6rem 0.2rem; 
+        font-size: 0.75rem;
+        min-width: 60px; 
+    }
+
+   
+
+    .modal-conteudo {
+        width: 95%; 
+        padding: 15px;
+    }
+
+    .fechar-modal {
+        font-size: 28px; 
+    }
+}
